@@ -17,6 +17,24 @@ public class LinkedList<E> implements IList<E> {
     }
 
     @Override
+    public void append(E num) {
+
+        Node newNode = new Node(num);
+        if(head == null) {
+            head = newNode;
+            return;
+        }
+
+        Node temp=head;
+        while(temp.next != null) {
+            temp= temp.next;
+        }
+        temp.next = newNode;
+
+
+    }
+
+    @Override
     public String toString() {
         return "LinkedList{" +
                 "head=" + head +

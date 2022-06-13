@@ -8,6 +8,9 @@ public class ListMain {
         list.add(70);
         list.add(30);
         list.add(56);
+        list.append(56);
+        list.append(30);
+        list.append(70);
         System.out.println(list);
     }
 }
