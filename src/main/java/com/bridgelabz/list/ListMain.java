@@ -8,7 +8,9 @@ public class ListMain {
         list.add(70);
         list.add(56);
         System.out.println(list);
-        list.insert(56,70,30);
+        list.insert(56, 70, 30);
+        System.out.println(list);
+        list.pop();
         System.out.println(list);
     }
 }

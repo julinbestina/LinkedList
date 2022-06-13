@@ -36,7 +36,6 @@ public class LinkedList<E> implements IList<E> {
 
     @Override
     public void insert(E previous, E next, E num) {
-
         Node newNode = new Node(num);
         Node temp = head;
         Node nextNode = temp.next;
@@ -48,6 +47,11 @@ public class LinkedList<E> implements IList<E> {
 
         temp.next = newNode;
         newNode.next = nextNode;
+    }
+
+    @Override
+    public void pop() {
+        head = head.next;
     }
 
     @Override
