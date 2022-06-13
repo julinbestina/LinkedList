@@ -6,11 +6,9 @@ public class ListMain {
         System.out.println("Welcome to LinkedList Program");
         IList<Integer> list = new LinkedList<Integer>();
         list.add(70);
-        list.add(30);
         list.add(56);
-        list.append(56);
-        list.append(30);
-        list.append(70);
+        System.out.println(list);
+        list.insert(56,70,30);
         System.out.println(list);
     }
 }
