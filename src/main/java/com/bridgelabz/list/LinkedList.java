@@ -2,9 +2,9 @@ package com.bridgelabz.list;
 
 public class LinkedList<E> implements IList<E> {
     public Node head;
+    int count = 0;
 
     public LinkedList() {
-
     }
 
     @Override
@@ -14,11 +14,13 @@ public class LinkedList<E> implements IList<E> {
 
         if (head == null) {
             head = newNode;
+            count++;
             return;
         }
 
         newNode.next = head;
         head = newNode;
+        count++;
     }
 
     @Override
@@ -28,6 +30,7 @@ public class LinkedList<E> implements IList<E> {
 
         if (head == null) {
             head = newNode;
+            count++;
             return;
         }
 
@@ -38,22 +41,24 @@ public class LinkedList<E> implements IList<E> {
         }
 
         temp.next = newNode;
+        count++;
     }
 
     @Override
-    public void insert(E previous, E next, E num) {
+    public void insert(E node, E num) {
 
         Node newNode = new Node(num);
         Node temp = head;
         Node nextNode = temp.next;
 
-        while (!temp.data.equals(previous) && !(nextNode.data.equals(next))) {
+        while (!temp.data.equals(node)) {
             temp = temp.next;
             nextNode = temp.next;
         }
 
         temp.next = newNode;
         newNode.next = nextNode;
+        count++;
     }
 
     @Override
@@ -61,6 +66,7 @@ public class LinkedList<E> implements IList<E> {
 
         Node temp = head;
         head = head.next;
+        count--;
         return (int) temp.data;
     }
 
@@ -69,6 +75,7 @@ public class LinkedList<E> implements IList<E> {
 
         if (head.next == null) {
             head = null;
+            count--;
             return Integer.parseInt(null);
         }
 
@@ -81,6 +88,7 @@ public class LinkedList<E> implements IList<E> {
         }
 
         previousNode.next = null;
+        count--;
         return (int) lastNode.data;
 
     }
@@ -98,6 +106,42 @@ public class LinkedList<E> implements IList<E> {
         }
 
         return false;
+    }
+
+    @Override
+    public int index(E data) {
+
+        return count;
+    }
+
+    @Override
+    public boolean remove(E data) {
+        if (head.data.equals(data)) {
+            head = head.next;
+            count--;
+            return true;
+        }
+        Node previousNode = head;
+        Node requiredNode = null;
+        while (previousNode.next != null && !previousNode.next.data.equals(data)) {
+            previousNode = previousNode.next;
+        }
+        requiredNode = previousNode.next;
+        previousNode.next = requiredNode.next;
+        count--;
+        return true;
+    }
+
+    @Override
+    public int size() {
+        int i = 0;
+
+        Node temp = head;
+        while (temp != null) {
+            i++;
+            temp = temp.next;
+        }
+        return i;
     }
 
     @Override
