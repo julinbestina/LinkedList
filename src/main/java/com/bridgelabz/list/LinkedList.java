@@ -110,8 +110,14 @@ public class LinkedList<E> implements IList<E> {
 
     @Override
     public int index(E data) {
+        int i = 0;
 
-        return count;
+        Node temp = head;
+        while (temp != null && !temp.data.equals(data)) {
+            temp = temp.next;
+            i++;
+        }
+        return i;
     }
 
     @Override
@@ -134,14 +140,15 @@ public class LinkedList<E> implements IList<E> {
 
     @Override
     public int size() {
-        int i = 0;
-
-        Node temp = head;
-        while (temp != null) {
-            i++;
-            temp = temp.next;
-        }
-        return i;
+        return count;
+//        int i = 0;
+//
+//        Node temp = head;
+//        while (temp != null) {
+//            i++;
+//            temp = temp.next;
+//        }
+//        return i;
     }
 
     @Override
