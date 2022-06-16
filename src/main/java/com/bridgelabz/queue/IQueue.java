@@ -1,5 +1,7 @@
 package com.bridgelabz.queue;
 
 public interface IQueue<E> {
-    void enqueue(E data);
+    public void enqueue(E data);
+
+    public int dequeue();
 }

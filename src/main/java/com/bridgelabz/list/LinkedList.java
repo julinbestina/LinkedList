@@ -61,11 +61,11 @@ public class LinkedList<E> implements IList<E> {
     }
 
     @Override
-    public void popLast() {
+    public int popLast() {
 
         if (head.next == null) {
             head = null;
-            return;
+            return Integer.parseInt(null);
         }
 
         Node lastNode = head.next;
@@ -77,6 +77,7 @@ public class LinkedList<E> implements IList<E> {
         }
 
         previousNode.next = null;
+        return (int) lastNode.data;
 
     }
 

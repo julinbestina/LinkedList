@@ -12,6 +12,11 @@ public class Queue<E> implements IQueue<E> {
     }
 
     @Override
+    public int dequeue() {
+        return list.popLast();
+    }
+
+    @Override
     public String toString() {
         return "Queue{" +
                 "list=" + list +

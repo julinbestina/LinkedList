@@ -9,6 +9,6 @@ public interface IList<E> {
 
     int pop();
 
-    void popLast();
+    int popLast();
 
 }
