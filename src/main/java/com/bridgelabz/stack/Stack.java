@@ -7,7 +7,6 @@ import com.bridgelabz.list.Node;
 public class Stack<E> implements IStack<E> {
     LinkedList<E> list = new LinkedList<>();
     Node top;
-    Node node= new Node();
 
     public void push(E data) {
 
