@@ -1,7 +1,7 @@
 package com.bridgelabz.list;
 
 public class LinkedList<E> implements IList<E> {
-    Node head;
+    public Node head;
 
     @Override
     public void add(E num) {

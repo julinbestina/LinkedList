@@ -1,10 +1,13 @@
 package com.bridgelabz.stack;
 
 import com.bridgelabz.list.LinkedList;
+import com.bridgelabz.list.Node;
 
 
 public class Stack<E> implements IStack<E> {
     LinkedList<E> list = new LinkedList<>();
+    Node top;
+    Node node= new Node();
 
     public void push(E data) {
 
@@ -14,6 +17,12 @@ public class Stack<E> implements IStack<E> {
     public int pop() {
 
         return list.pop();
+
+    }
+
+    @Override
+    public int peek() {
+       return (int) list.head.data;
     }
 
     @Override

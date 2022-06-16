@@ -5,7 +5,6 @@ public class Node<E> {
     public Node next;
 
     public Node(E data) {
-
         this.data = data;
     }
 
