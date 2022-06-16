@@ -53,6 +53,22 @@ public class LinkedList<E> implements IList<E> {
     public void pop() {
         head = head.next;
     }
+    @Override
+    public void popLast() {
+        if(head.next == null){
+            head = null;
+            return;
+        }
+
+        Node lastNode = head.next;
+        Node previousNode = head;
+        while (lastNode.next != null) {
+            previousNode = lastNode;
+            lastNode = lastNode.next;
+        }
+        previousNode.next = null;
+
+    }
 
     @Override
     public String toString() {

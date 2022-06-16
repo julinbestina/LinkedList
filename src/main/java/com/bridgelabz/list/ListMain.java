@@ -12,5 +12,7 @@ public class ListMain {
         System.out.println(list);
         list.pop();
         System.out.println(list);
+        list.popLast();
+        System.out.println(list);
     }
 }
