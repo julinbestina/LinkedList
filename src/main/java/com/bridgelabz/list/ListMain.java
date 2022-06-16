@@ -16,9 +16,7 @@ public class ListMain {
         System.out.println(list);
         System.out.println(list.pop());
         System.out.println(list);
-
         System.out.println(list.popLast());
-
         System.out.println(list);
     }
 }
