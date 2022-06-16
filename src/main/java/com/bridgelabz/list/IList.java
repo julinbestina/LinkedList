@@ -11,4 +11,5 @@ public interface IList<E> {
 
     int popLast();
 
+    boolean search(E data);
 }

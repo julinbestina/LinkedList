@@ -3,6 +3,10 @@ package com.bridgelabz.list;
 public class LinkedList<E> implements IList<E> {
     public Node head;
 
+    public LinkedList() {
+
+    }
+
     @Override
     public void add(E num) {
 
@@ -79,6 +83,21 @@ public class LinkedList<E> implements IList<E> {
         previousNode.next = null;
         return (int) lastNode.data;
 
+    }
+
+    @Override
+    public boolean search(E data) {
+
+        Node temp = head;
+
+        while (temp != null) {
+            if (temp.data.equals(data))
+                return true;
+            else
+                temp = temp.next;
+        }
+
+        return false;
     }
 
     @Override

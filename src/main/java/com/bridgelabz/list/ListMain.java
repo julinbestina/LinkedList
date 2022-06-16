@@ -14,9 +14,10 @@ public class ListMain {
         list.insert(56, 70, 30);
 
         System.out.println(list);
-        System.out.println(list.pop());
+        System.out.println(list.search(30));
+//        System.out.println(list.pop());
         System.out.println(list);
-        System.out.println(list.popLast());
+//        System.out.println(list.popLast());
         System.out.println(list);
     }
 }
