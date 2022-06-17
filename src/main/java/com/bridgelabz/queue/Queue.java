@@ -13,7 +13,7 @@ public class Queue<E> implements IQueue<E> {
 
     @Override
     public int dequeue() {
-        return list.popLast();
+        return list.pop();
     }
 
     @Override
